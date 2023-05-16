@@ -1,0 +1,54 @@
+.cursor {
+  position: fixed;
+  background: #ff5c00;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1111;
+  transform: scale(1) translate(-2px, -2px);
+  transition: 0.3s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform;
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.link .portfolioLink {
+  position: relative;
+  z-index: 1;
+}
+
+.follower {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 64px;
+  height: 64px;
+  border: 1px solid #ddd5cc;
+  border-radius: 100%;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1111;
+  transform: scale(1);
+  transition: 0.3s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+    0.2s ease background, 0.2s ease border-color;
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 767px) {
+  .cursor {
+    display: none;
+  }
+
+  .follower {
+    display: none;
+  }
+}

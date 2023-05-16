@@ -1,0 +1,29 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 50px;
+
+  font-family: 'Neue Montreal';
+  font-size: 18px;
+  line-height: 140%;
+  color: #ff5c00;
+
+  background: transparent;
+  border: 1px solid #ff5c00;
+  border-radius: 80px;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #ff5c00;
+    color: #ddd5cc;
+  }
+
+  @media (max-width: 767px) {
+    padding: 10px 40px;
+
+    font-size: 16px;
+    line-height: 140%;
+  }
+}

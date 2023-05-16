@@ -1,0 +1,128 @@
+.footer {
+  padding: 0 0 20px;
+  background: #ddd5cc;
+
+  @media (max-width: 767px) {
+    padding: 0 0 10px;
+  }
+
+  &Links {
+    span {
+      font-family: 'Neue Montreal';
+      font-size: 14px;
+      line-height: 140%;
+      color: #272726;
+
+      @media (max-width: 767px) {
+        font-size: 22px;
+        line-height: 140%;
+        font-family: 'NanumMyeongjo';
+      }
+    }
+
+    &__content {
+      margin: 15px 0 0;
+      display: flex;
+
+      @media (max-width: 767px) {
+        flex-direction: column;
+        margin: 5px 0 0;
+      }
+
+      &Item {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        font-family: 'Neue Montreal';
+        font-size: 17px;
+        line-height: 140%;
+        text-decoration-line: underline;
+        color: #272726;
+
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: #ff5c00;
+        }
+
+        &:not(:first-child) {
+          &::before {
+            content: '';
+            display: block;
+            width: 14px;
+            height: 1px;
+            background: #272726;
+            margin: 0 9.5px;
+          }
+        }
+
+        @media (max-width: 767px) {
+          font-size: 12px;
+          line-height: 15px;
+
+          &:not(:first-child) {
+            margin: 5px 0 0;
+          }
+
+          &::before {
+            display: none !important;
+          }
+        }
+      }
+    }
+  }
+
+  &Bottom {
+    margin: 50px 0 0;
+    padding: 15px 0 0;
+    border-top: 1px solid rgba(39, 39, 38, 0.3);
+
+    @media (max-width: 767px) {
+      margin: 30px 0 0;
+      padding: 10px 0 0;
+    }
+
+    &__mail {
+      display: flex;
+      align-items: center;
+
+      font-family: 'Neue Montreal';
+      font-size: 17px;
+      line-height: 140%;
+      text-decoration-line: underline;
+      color: #272726;
+
+      transition: all 0.3s ease;
+
+      @media (max-width: 767px) {
+        font-size: 12px;
+        line-height: 15px;
+      }
+
+      svg {
+        margin: 0 4px 0 0;
+
+        @media (max-width: 767px) {
+          margin: 2px 5px 0 0;
+          width: 14px;
+          height: 14px;
+        }
+
+        path {
+          fill: #272726;
+          transition: all 0.3s ease;
+        }
+      }
+
+      &:hover {
+        color: #ff5c00;
+        svg {
+          path {
+            fill: #ff5c00;
+          }
+        }
+      }
+    }
+  }
+}

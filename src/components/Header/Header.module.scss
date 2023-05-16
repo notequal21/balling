@@ -1,0 +1,169 @@
+.header {
+  position: relative;
+  z-index: 10;
+  margin: 30px 0 0;
+
+  @media (max-width: 767px) {
+    border-bottom: 1px solid rgba(221, 213, 204, 0.3);
+    margin: 0;
+    padding: 11px 0 12px;
+  }
+
+  &Body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(221, 213, 204, 0.3);
+    padding: 0 0 20px;
+
+    @media (max-width: 767px) {
+      border-bottom: none;
+      padding: 0;
+    }
+
+    &__logo {
+      @media (max-width: 767px) {
+        height: 27px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+
+    &__nav {
+      display: flex;
+
+      @media (max-width: 767px) {
+        padding: 90px 0 40px;
+        position: fixed;
+        z-index: 9;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #1e1e1e;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        transition: all 0.4s ease;
+        transform: translate(100%, 0);
+
+        &.open {
+          transform: translate(0);
+        }
+      }
+
+      &Item {
+        cursor: pointer;
+
+        font-family: 'Neue Montreal';
+        font-size: 17px;
+        line-height: 140%;
+        color: #ddd5cc;
+
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: #ff5c00;
+        }
+
+        @media (max-width: 767px) {
+          font-size: 16px;
+          line-height: 110%;
+        }
+
+        &:not(:first-child) {
+          margin: 0 0 0 30px;
+
+          @media (max-width: 800px) {
+            margin: 0 0 0 20px;
+          }
+
+          @media (max-width: 767px) {
+            margin: 10px 0 0;
+          }
+        }
+      }
+    }
+
+    &__btn {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      font-family: 'Neue Montreal';
+      font-size: 14px;
+      line-height: 140%;
+      text-decoration-line: underline;
+      color: #ddd5cc;
+
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: #ff5c00;
+      }
+
+      @media (max-width: 767px) {
+        margin: 30px 0 0;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: -0.002em;
+      }
+
+      svg {
+        margin: 0 5px 0 0;
+      }
+    }
+
+    &__burger {
+      position: relative;
+      width: 22px;
+      height: 14px;
+
+      span {
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background: #ff5c00;
+
+        transition: all 0.3s ease;
+
+        &:nth-child(1) {
+          top: 0;
+        }
+        &:nth-child(2) {
+          top: 50%;
+          transform: translate(0, -50%);
+        }
+        &:nth-child(3) {
+          bottom: 0;
+        }
+      }
+
+      &.active {
+        span {
+          &:nth-child(2) {
+            transform: translate(100%, -50%) scale(0.5);
+            opacity: 0;
+          }
+          &:nth-child(1),
+          &:nth-child(3) {
+            top: 50%;
+            transform: translate(0, -50%);
+          }
+          &:nth-child(1) {
+            transform: translate(0, -50%) rotate(45deg);
+          }
+          &:nth-child(3) {
+            transform: translate(0, -50%) rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+}
