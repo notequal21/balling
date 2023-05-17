@@ -1,7 +1,8 @@
 import Button from '../../components/Button/Button';
+import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import style from './Contacts.module.scss';
 import { ContactsText } from './ContactsText';
-import Input from './components/Input/Input';
+import Input from '../../components/Input/Input';
 
 const Contacts = () => {
   return (
@@ -9,9 +10,9 @@ const Contacts = () => {
       <div className='container'>
         <div className={style.contactsBody}>
           <div className={style.contactsBody__content}>
-            <div className={style.contactsBody__title}>
+            <SectionTitle className={style.contactsBody__title}>
               {ContactsText.title}
-            </div>
+            </SectionTitle>
             <div className={style.contactsBody__subtitle}>
               {ContactsText.subtitle}
             </div>

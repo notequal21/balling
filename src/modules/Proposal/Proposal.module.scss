@@ -1,0 +1,32 @@
+.proposal {
+  padding: 0 0 200px;
+
+  @media (max-width: 992px) {
+    padding: 0 0 80px;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__description {
+    margin: 50px 0 0;
+    text-align: center;
+
+    @media (max-width: 992px) {
+      margin: 20px 0 0;
+    }
+  }
+
+  &Form {
+    margin: 90px 0 0;
+
+    @media (max-width: 992px) {
+      margin: 40px 0 0;
+    }
+
+    @media (max-width: 767px) {
+      margin: 40px auto 0;
+    }
+  }
+}

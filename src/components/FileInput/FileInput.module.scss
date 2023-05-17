@@ -1,0 +1,60 @@
+.fileInput {
+  margin: 0 0 0 20px;
+
+  @media (max-width: 767px) {
+    margin: 0 0 0 10px;
+  }
+
+  input {
+    display: none;
+  }
+
+  .fake {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: 'Neue Montreal';
+    font-size: 17px;
+    line-height: 140%;
+    color: rgba(221, 213, 204, 0.3);
+
+    border-bottom: 1px solid rgba(221, 213, 204, 0.3);
+
+    transition: all 0.3s ease;
+
+    svg {
+      transform: translate(0, -2px);
+
+      path {
+        fill: rgba(221, 213, 204, 0.3);
+        transition: all 0.3s ease;
+      }
+    }
+
+    @media (max-width: 767px) {
+      font-size: 10px;
+      line-height: 12px;
+    }
+
+    &::placeholder {
+      color: rgba(221, 213, 204, 0.3);
+    }
+
+    &:hover {
+      border-bottom: 1px solid #ddd5cc;
+
+      svg {
+        path {
+          fill: #ddd5cc;
+        }
+      }
+    }
+
+    &:focus {
+      color: #ddd5cc;
+      border-bottom: 1px solid #ddd5cc;
+    }
+  }
+}

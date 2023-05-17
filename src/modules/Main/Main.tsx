@@ -1,3 +1,4 @@
+import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import style from './Main.module.scss';
 import { MainText } from './MainText';
 import Cards from './modules/Cards/Cards';
@@ -8,7 +9,9 @@ const Main = () => {
       <div className='container'>
         <div className={style.mainBody}>
           <div className={style.mainBody__label}>{MainText.label}</div>
-          <div className={style.mainBody__title}>{MainText.title}</div>
+          <SectionTitle className={style.mainBody__title}>
+            {MainText.title}
+          </SectionTitle>
           <Cards className={style.mainBody__cards} />
         </div>
       </div>
