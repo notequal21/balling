@@ -38,7 +38,7 @@ const About = () => {
           scrub: 0.5,
           markers: false,
           start: 'top',
-          end: '+=200%',
+          end: isMobile ? '+=1000' : '+=1500',
 
           onUpdate: (self) => {
             titleArray.forEach((item) =>
