@@ -7,6 +7,8 @@ import Contacts from './modules/Contacts/Contacts';
 import Footer from './components/Footer/Footer';
 import Services from './modules/Services/Services';
 import Proposal from './modules/Proposal/Proposal';
+import About from './modules/About/About';
+import Sectors from './modules/Sectors/Sectors';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
 
         {/* Content */}
         <Main />
+        <About />
+        <Sectors />
         <Services />
         <Proposal />
         <Contacts />

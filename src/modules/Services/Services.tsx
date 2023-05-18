@@ -6,7 +6,7 @@ import MarqueeRows from './modules/MarqueeRows/MarqueeRows';
 
 const Services = () => {
   return (
-    <section className={style.services}>
+    <section id='services' className={style.services}>
       <div className='container'>
         <SectionTitle className={style.services__title}>
           {ServicesText.title}

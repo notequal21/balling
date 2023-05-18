@@ -6,7 +6,7 @@ import Form from './modules/Form/Form';
 
 const Proposal = () => {
   return (
-    <section className={style.proposal}>
+    <section id='subaproposal' className={style.proposal}>
       <div className='container'>
         <SectionTitle className={style.proposal__title}>
           {ProposalText.title}

@@ -5,7 +5,7 @@ import Cards from './modules/Cards/Cards';
 
 const Main = () => {
   return (
-    <main className={style.main}>
+    <main id='home' className={style.main}>
       <div className='container'>
         <div className={style.mainBody}>
           <div className={style.mainBody__label}>{MainText.label}</div>

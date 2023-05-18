@@ -4,6 +4,17 @@ import style from './Footer.module.scss';
 import { FooterText } from './FooterText';
 
 const Footer = () => {
+  const scrollToSection = (section: string) => {
+    const item: any = document.querySelector(
+      `#${section.toLocaleLowerCase().split(' ').join('')}`
+    );
+
+    window.scrollTo({
+      top: item.offsetTop,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <footer className={style.footer}>
       <div className='container'>
@@ -13,7 +24,11 @@ const Footer = () => {
             {navLinks.map((item, index) => {
               if (item !== 'Contact') {
                 return (
-                  <div key={index} className={style.footerLinks__contentItem}>
+                  <div
+                    onClick={() => scrollToSection(item)}
+                    key={index}
+                    className={style.footerLinks__contentItem}
+                  >
                     {item}
                   </div>
                 );

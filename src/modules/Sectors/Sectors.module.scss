@@ -1,0 +1,23 @@
+.sectors {
+  overflow: hidden;
+  padding: 100px 0;
+
+  @media (max-width: 992px) {
+    padding: 50px 0;
+  }
+  @media (max-width: 767px) {
+    padding: 40px 0;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &Body {
+    margin: 70px 0 0;
+
+    @media (max-width: 767px) {
+      margin: 10px 0 0;
+    }
+  }
+}

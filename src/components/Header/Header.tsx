@@ -11,6 +11,30 @@ const Header = () => {
   const isMobile = useMediaQuery('(max-width:767px)');
   const [isBurgerOpen, setBurgerOpen] = useState(false);
 
+  const scrollToSection = (section: string) => {
+    const body: any = document.querySelector('body');
+    setBurgerOpen(false);
+
+    if (body.classList.contains('lock')) {
+      body.classList.remove('lock');
+    }
+
+    const item: any = document.querySelector(
+      `#${section.toLocaleLowerCase().split(' ').join('')}`
+    );
+
+    window.scrollTo({
+      top: item.offsetTop,
+      behavior: 'smooth',
+    });
+  };
+
+  const toggleBurger = () => {
+    const body: any = document.querySelector('body');
+    setBurgerOpen(!isBurgerOpen);
+    body.classList.toggle('lock');
+  };
+
   return (
     <>
       <header className={style.header}>
@@ -23,7 +47,11 @@ const Header = () => {
               <>
                 <div className={style.headerBody__nav}>
                   {navLinks.map((item, index) => (
-                    <div key={index} className={style.headerBody__navItem}>
+                    <div
+                      onClick={() => scrollToSection(item)}
+                      key={index}
+                      className={style.headerBody__navItem}
+                    >
                       {item}
                     </div>
                   ))}
@@ -36,7 +64,7 @@ const Header = () => {
             )}
             {isMobile && (
               <div
-                onClick={() => setBurgerOpen(!isBurgerOpen)}
+                onClick={toggleBurger}
                 className={`${style.headerBody__burger} ${
                   isBurgerOpen && style.active
                 }`}
@@ -54,7 +82,11 @@ const Header = () => {
           className={`${style.headerBody__nav} ${isBurgerOpen && style.open}`}
         >
           {navLinks.map((item, index) => (
-            <div key={index} className={style.headerBody__navItem}>
+            <div
+              key={index}
+              onClick={() => scrollToSection(item)}
+              className={style.headerBody__navItem}
+            >
               {item}
             </div>
           ))}

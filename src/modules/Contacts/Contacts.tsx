@@ -6,7 +6,7 @@ import Input from '../../components/Input/Input';
 
 const Contacts = () => {
   return (
-    <section className={style.contacts}>
+    <section id='contact' className={style.contacts}>
       <div className='container'>
         <div className={style.contactsBody}>
           <div className={style.contactsBody__content}>
