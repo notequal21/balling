@@ -1,6 +1,7 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import style from './Card.module.scss';
+import { useMediaQuery } from 'usehooks-ts';
 
 interface ICard {
   title: string;
@@ -10,7 +11,9 @@ interface ICard {
 }
 
 const Card = ({ title, children, description, className }: ICard) => {
+  const isMobile = useMediaQuery('(max-width:991px)');
   const cursorRef = useRef(null);
+  const [isOpen, setOpen] = useState(false);
 
   let changeCursor = useCallback(() => {
     const cursor = cursorRef.current;
@@ -47,12 +50,15 @@ const Card = ({ title, children, description, className }: ICard) => {
   }, []);
 
   useEffect(() => {
-    changeCursor();
+    !isMobile && changeCursor();
   }, [changeCursor]);
 
   return (
     <div
-      className={`${style.card} cursorHover cursorHover__sectors ${className}`}
+      onClick={() => setOpen(!isOpen)}
+      className={`${style.card} cursorHover cursorHover__sectors ${className} ${
+        isOpen && style.active
+      }`}
     >
       <div className={style.card__title}>{title}</div>
       <div ref={cursorRef} className={style.card__img}>

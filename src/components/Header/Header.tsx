@@ -6,6 +6,7 @@ import { useMediaQuery } from 'usehooks-ts';
 
 // img imports
 import logo from './assets/logo.svg';
+import NoiseBg from '../NoiseBg/NoiseBg';
 
 const Header = () => {
   const isMobile = useMediaQuery('(max-width:767px)');
@@ -81,6 +82,7 @@ const Header = () => {
         <div
           className={`${style.headerBody__nav} ${isBurgerOpen && style.open}`}
         >
+          <NoiseBg />
           {navLinks.map((item, index) => (
             <div
               key={index}

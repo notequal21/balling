@@ -1,8 +1,9 @@
 import { useEffect, useRef } from 'react';
 import style from './NoiseBg.module.scss';
+import { useMediaQuery } from 'usehooks-ts';
 
 class Grain {
-  constructor(el) {
+  constructor(el, alpha) {
     /**
      * Options
      * Increase the pattern size if visible pattern
@@ -11,7 +12,7 @@ class Grain {
     this.patternScaleX = 1;
     this.patternScaleY = 1;
     this.patternRefreshInterval = 3; // 8
-    this.patternAlpha = 15; // int between 0 and 255,
+    this.patternAlpha = alpha; // int between 0 and 255,
 
     /**
      * Create canvas
@@ -98,12 +99,14 @@ class Grain {
 const NoiseBg = () => {
   const canvasRef = useRef(null);
 
+  const isMobile = useMediaQuery('(max-width:767px)');
+
   useEffect(() => {
     /**
      * Initiate Grain
      */
     const el = canvasRef.current;
-    const grain = new Grain(el);
+    const grain = new Grain(el, isMobile ? 8 : 15);
   });
 
   return <canvas ref={canvasRef} className={`${style.noise}`}></canvas>;
