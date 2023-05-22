@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useMediaQuery } from 'usehooks-ts';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import { ImgWebp } from '../../helpers/imgwebp';
@@ -7,6 +8,15 @@ import Card from './components/Card/Card';
 
 const Sectors = () => {
   const isMobile = useMediaQuery('(max-width:991px)');
+  const [activeItem, setActiveItem]: any = useState(0);
+
+  const setActive = (index: number) => {
+    if (index === activeItem) {
+      setActiveItem(null);
+    } else {
+      setActiveItem(index);
+    }
+  };
 
   return (
     <section id='sectors' className={style.sectors}>
@@ -16,7 +26,13 @@ const Sectors = () => {
         </SectionTitle>
         <div className={style.sectorsBody}>
           {SectorsText.cards.map((item, index) => (
-            <Card key={index} title={item.title} description={item.description}>
+            <Card
+              isActive={activeItem === index && isMobile}
+              handler={() => setActive(index)}
+              key={index}
+              title={item.title}
+              description={item.description}
+            >
               <ImgWebp
                 src={isMobile ? item.imgMobile : item.img}
                 src2x={isMobile ? item.imgMobile2x : item.img2x}

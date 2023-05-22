@@ -4,13 +4,22 @@ import style from './Card.module.scss';
 import { useMediaQuery } from 'usehooks-ts';
 
 interface ICard {
+  isActive?: boolean;
+  handler?: any;
   title: string;
   children?: any;
   description: string;
   className?: string;
 }
 
-const Card = ({ title, children, description, className }: ICard) => {
+const Card = ({
+  isActive = false,
+  handler,
+  title,
+  children,
+  description,
+  className,
+}: ICard) => {
   const isMobile = useMediaQuery('(max-width:991px)');
   const cursorRef = useRef(null);
   const [isOpen, setOpen] = useState(false);
@@ -55,9 +64,11 @@ const Card = ({ title, children, description, className }: ICard) => {
 
   return (
     <div
-      onClick={() => setOpen(!isOpen)}
+      // onClick={() => setOpen(!isOpen)}
+      onClick={() => handler()}
       className={`${style.card} cursorHover cursorHover__sectors ${className} ${
-        isOpen && style.active
+        // isOpen
+        isActive && style.active
       }`}
     >
       <div className={style.card__title}>{title}</div>
