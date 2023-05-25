@@ -27,16 +27,19 @@ const Sectors = () => {
         <div className={style.sectorsBody}>
           {SectorsText.cards.map((item, index) => (
             <Card
-              isActive={activeItem === index && isMobile}
+              isActive={activeItem === index}
               handler={() => setActive(index)}
               key={index}
               title={item.title}
               description={item.description}
             >
               <ImgWebp
-                src={isMobile ? item.imgMobile : item.img}
-                src2x={isMobile ? item.imgMobile2x : item.img2x}
-                srcWebp={isMobile ? item.imgMobileWebp : item.imgWebp}
+                src={item.img}
+                src2x={item.img2x}
+                srcWebp={item.imgWebp}
+                // src={isMobile ? item.imgMobile : item.img}
+                // src2x={isMobile ? item.imgMobile2x : item.img2x}
+                // srcWebp={isMobile ? item.imgMobileWebp : item.imgWebp}
               />
             </Card>
           ))}

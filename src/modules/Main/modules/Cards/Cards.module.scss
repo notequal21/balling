@@ -6,10 +6,10 @@
   }
 
   &__item {
-    flex: 0 0 calc(33.333% - 26px);
+    flex: 0 0 calc(33.333% - 8px);
 
     &:not(:first-child) {
-      margin: 0 0 0 40px;
+      margin: 0 0 0 12px;
     }
 
     @media (max-width: 992px) {

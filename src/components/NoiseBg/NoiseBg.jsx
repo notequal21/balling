@@ -99,14 +99,12 @@ class Grain {
 const NoiseBg = () => {
   const canvasRef = useRef(null);
 
-  const isMobile = useMediaQuery('(max-width:767px)');
-
   useEffect(() => {
     /**
      * Initiate Grain
      */
     const el = canvasRef.current;
-    const grain = new Grain(el, isMobile ? 8 : 15);
+    const grain = new Grain(el, 8);
   });
 
   return <canvas ref={canvasRef} className={`${style.noise}`}></canvas>;

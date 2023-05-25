@@ -42,21 +42,6 @@ const CustomCursor = () => {
       }
     );
 
-    cursorHover.forEach((link: any) => {
-      link.addEventListener('mouseenter', () => {
-        if (link.classList.contains('cursorHover__sectors')) {
-          cursor?.classList.add(style.hidden);
-          follower?.classList.add(style.hidden);
-        }
-      });
-      link.addEventListener('mouseleave', () => {
-        if (link.classList.contains('cursorHover__sectors')) {
-          cursor?.classList.remove(style.hidden);
-          follower?.classList.remove(style.hidden);
-        }
-      });
-    });
-
     window.addEventListener('mousemove', (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;

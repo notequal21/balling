@@ -1,146 +1,122 @@
 .card {
-  cursor: none;
   position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
+  padding: 0;
+  transition: all 0.3s ease;
 
-  border-bottom: 1px solid rgba(221, 213, 204, 0.3);
+  &Top {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid rgba(221, 213, 204, 0.3);
 
-  &:hover {
-    .card__description {
-      opacity: 1;
-      transform: translate(0) scale(1);
-    }
-    .card__img {
-      img {
-        opacity: 1;
-        transform: scale(1) translate(0);
-      }
-    }
-  }
-
-  @media (max-width: 991px) {
-    flex-wrap: wrap;
-    // border-bottom: none;
-    padding: 0;
-  }
-
-  // &:hover {
-  &.active {
-    .card__description {
-      opacity: 1;
-      transform: translate(0) scale(1);
-    }
-    .card__img {
-      img {
-        opacity: 1;
-        transform: scale(1) translate(0);
-      }
-    }
-
-    .card__description,
-    .card__img {
-      display: block;
-    }
-    .card__title {
-      color: #ff5c00;
+    &__title {
+      font-size: 48px;
+      line-height: 110%;
+      letter-spacing: -0.02em;
+      color: #ddd5cc;
+      padding: 15px 0 10px;
 
       @media (max-width: 991px) {
-        padding: 5px 0 1px;
+        font-size: 22px;
+        line-height: 140%;
+        padding: 3px 0;
       }
     }
-    .card__description {
-      padding: 0 0 20px;
 
-      @media (max-width: 991px) {
-        padding: 0 0 4px;
+    &__arrow {
+      svg {
+        transition: all 0.4s ease;
+        transform: rotate(180deg);
+
+        @media (max-width: 991px) {
+          width: 26px;
+          height: 26px;
+        }
       }
     }
   }
 
-  &__title {
-    font-size: 60px;
-    line-height: 110%;
-    letter-spacing: -0.02em;
-    color: #ddd5cc;
+  &Content {
+    display: flex;
+    align-items: center;
 
-    @media (max-width: 991px) {
-      width: 100%;
-      font-size: 34px;
-      padding: 20px 0;
-      // border-bottom: 1px solid rgba(221, 213, 204, 0.3);
-      text-transform: uppercase;
-    }
-    @media (max-width: 767px) {
-      font-size: 22px;
-      line-height: 140%;
-      padding: 5px 0;
-    }
-  }
-
-  &__img {
-    position: fixed;
+    margin: 15px 0 0;
+    opacity: 0;
     pointer-events: none;
-    user-select: none;
-    z-index: -1;
-
-    transform: translate(-50%, -50%);
-
-    width: 250px;
-    height: 166px;
+    max-height: 0;
+    transition: all 0.4s ease;
     overflow: hidden;
 
-    border-radius: 15px;
-
-    img {
-      background: rgba(255, 92, 0, 0.2);
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 15px;
-
-      transition: all 0.4s ease;
-      transform: scale(3, 0) translate(0);
-      opacity: 0;
+    @media (max-width: 991px) {
+      margin: 4px 0 0;
     }
 
-    @media (max-width: 991px) {
-      position: relative;
-      display: none;
-      width: 100%;
-      height: 44px;
-      border-radius: 2px;
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
 
-      transform: scale(1) translate(0);
-      opacity: 1;
+    &__img {
+      flex: 0 0 auto;
+      width: 680px;
+      height: 316px;
+      border-radius: 5px;
+      overflow: hidden;
 
       img {
-        border-radius: 2px;
+        width: 100%;
+        height: 100%;
+      }
+
+      @media (max-width: 1200px) {
+        width: 480px;
+        height: 223px;
+      }
+      @media (max-width: 991px) {
+        width: 360px;
+        height: 167px;
+      }
+      @media (max-width: 767px) {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__description {
+      width: 560px;
+      margin: 0 0 0 40px;
+
+      font-family: 'Neue Montreal';
+      font-size: 22px;
+      line-height: 140%;
+      color: #ddd5cc;
+
+      @media (max-width: 767px) {
+        width: 100%;
+        margin: 4px 0 0;
+        font-size: 12px;
+        line-height: 15px;
       }
     }
   }
 
-  &__description {
-    width: 264px;
-
-    font-family: 'Neue Montreal';
-    font-size: 14px;
-    line-height: 140%;
-    color: #ddd5cc;
-
-    transition: all 0.4s ease;
-    opacity: 0;
-    transform: translate(-25%, 0) scale(1, 2);
-
-    @media (max-width: 991px) {
-      width: 100%;
-      display: none;
-      margin: 4px 0 0;
-
+  &.active {
+    border-bottom: 1px solid rgba(221, 213, 204, 0.3);
+    .cardTop__arrow {
+      svg {
+        transform: rotate(0deg);
+      }
+    }
+    .cardContent {
       opacity: 1;
-      transform: translate(0) scale(1);
+      max-height: 400px;
+      pointer-events: unset;
+      padding: 0 0 15px;
+
+      @media (max-width: 991px) {
+        padding: 0 0 6px;
+      }
     }
   }
 }
