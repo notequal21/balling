@@ -11,12 +11,27 @@
     width: 100%;
     border-bottom: 1px solid rgba(221, 213, 204, 0.3);
 
+    &:hover {
+      .cardTop__title {
+        color: #ff5c00;
+      }
+      .cardTop__arrow {
+        svg {
+          path {
+            fill: #ff5c00;
+          }
+        }
+      }
+    }
+
     &__title {
       font-size: 48px;
       line-height: 110%;
       letter-spacing: -0.02em;
       color: #ddd5cc;
       padding: 15px 0 10px;
+
+      transition: all 0.3s ease;
 
       @media (max-width: 991px) {
         font-size: 22px;
@@ -29,6 +44,10 @@
       svg {
         transition: all 0.4s ease;
         transform: rotate(180deg);
+
+        path {
+          transition: all 0.3s ease;
+        }
 
         @media (max-width: 991px) {
           width: 26px;
