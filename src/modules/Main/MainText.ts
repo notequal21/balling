@@ -1,6 +1,6 @@
-import cardIcon1 from '../../assets/icons/cash.svg';
-import cardIcon2 from '../../assets/icons/heart.svg';
-import cardIcon3 from '../../assets/icons/time.svg';
+import cardIcon1 from '../../assets/icons/cashSvg';
+import cardIcon2 from '../../assets/icons/heartSvg';
+import cardIcon3 from '../../assets/icons/timeSvg';
 
 export const MainText = {
   label: 'investments and Entrepreneurship',

@@ -8,7 +8,7 @@ import Card from './components/Card/Card';
 
 const Sectors = () => {
   const isMobile = useMediaQuery('(max-width:991px)');
-  const [activeItem, setActiveItem]: any = useState(0);
+  const [activeItem, setActiveItem]: any = useState(-1);
 
   const setActive = (index: number) => {
     if (index === activeItem) {

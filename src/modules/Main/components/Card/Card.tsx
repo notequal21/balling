@@ -1,13 +1,15 @@
 import style from './Card.module.scss';
+import './anim.scss';
 
 interface ICard {
+  animIndex?: string;
   className?: string;
-  ico: string;
+  ico: any;
   title: string;
   index: number;
 }
 
-const Card = ({ className, ico, title, index }: ICard) => {
+const Card = ({ animIndex, className, ico, title, index }: ICard) => {
   return (
     <div className={`${style.card} ${className}`}>
       <div className={style.card__dots}>
@@ -26,9 +28,7 @@ const Card = ({ className, ico, title, index }: ICard) => {
           </>
         )}
       </div>
-      <div className={style.card__ico}>
-        <img src={ico} alt='' />
-      </div>
+      <div className={`${style.card__ico} main-ico ${animIndex}`}>{ico}</div>
       <div className={style.card__title}>{title}</div>
     </div>
   );

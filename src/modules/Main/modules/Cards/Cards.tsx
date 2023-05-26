@@ -11,6 +11,7 @@ const Cards = ({ className }: ICards) => {
     <div className={`${style.cards} ${className}`}>
       {MainText.cards.map((item, index) => (
         <Card
+          animIndex={`anim${index}`}
           key={index}
           ico={item.ico}
           title={item.title}
