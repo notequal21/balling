@@ -1,6 +1,7 @@
 import { useCallback, useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import style from './CustomCursor.module.scss';
+import arrowSvg from './assets/arrowSvg';
 
 const CustomCursor = () => {
   const cursorRef = useRef(null);
@@ -42,6 +43,21 @@ const CustomCursor = () => {
       }
     );
 
+    cursorHover.forEach((link: any) => {
+      link.addEventListener('mouseenter', () => {
+        if (link.classList.contains('cursorHover__draggable')) {
+          cursor?.classList.add(style.hidden);
+          follower?.classList.add(style.draggable);
+        }
+      });
+      link.addEventListener('mouseleave', () => {
+        if (link.classList.contains('cursorHover__draggable')) {
+          cursor?.classList.remove(style.hidden);
+          follower?.classList.remove(style.draggable);
+        }
+      });
+    });
+
     window.addEventListener('mousemove', (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
@@ -55,7 +71,11 @@ const CustomCursor = () => {
   return (
     <>
       <div ref={cursorRef} className={style.cursor}></div>
-      <div ref={followerRef} className={style.follower}></div>
+      <div ref={followerRef} className={style.follower}>
+        <div className={style.follower__draggable}>
+          {arrowSvg} Drag {arrowSvg}
+        </div>
+      </div>
     </>
   );
 };

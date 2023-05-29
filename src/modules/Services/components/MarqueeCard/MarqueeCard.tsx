@@ -1,3 +1,4 @@
+import { SwiperSlide } from 'swiper/react';
 import style from './MarqueeCard.module.scss';
 
 interface IMarqueeCard {
@@ -6,7 +7,11 @@ interface IMarqueeCard {
 }
 
 const MarqueeCard = ({ children, className }: IMarqueeCard) => {
-  return <div className={`${style.card} ${className}`}>{children}</div>;
+  return (
+    <SwiperSlide>
+      <div className={`${style.card} ${className}`}>{children}</div>
+    </SwiperSlide>
+  );
 };
 
 export default MarqueeCard;

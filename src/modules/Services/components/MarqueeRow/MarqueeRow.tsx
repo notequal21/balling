@@ -1,5 +1,7 @@
 import Marquee from 'react-fast-marquee';
 import style from './MarqueeRow.module.scss';
+import { Swiper } from 'swiper/react';
+import 'swiper/css';
 
 interface IMarqueeRow {
   children: any;
@@ -9,9 +11,10 @@ interface IMarqueeRow {
 
 const MarqueeRow = ({ children, direction, className }: IMarqueeRow) => {
   return (
-    <Marquee direction={direction} className={`${style.marquee} ${className}`}>
-      {children}
-    </Marquee>
+    // <Marquee direction={direction} className={`${style.marquee} ${className}`}>
+    //   {children}
+    // </Marquee>
+    <Swiper>{children}</Swiper>
   );
 };
 

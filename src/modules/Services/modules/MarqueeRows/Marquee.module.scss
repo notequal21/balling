@@ -5,6 +5,49 @@
     margin: 40px 0 0;
   }
 
+  .slider {
+    &:not(:first-child) {
+      margin: 24px 0 0;
+
+      @media (max-width: 992px) {
+        margin: 15px 0 0;
+      }
+    }
+
+    .slide {
+      width: 405px;
+      @media (max-width: 992px) {
+        width: 264px;
+      }
+    }
+    .card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 405px;
+      height: 150px;
+
+      background: #272726;
+      border-radius: 15px;
+      padding: 0 30px;
+
+      font-size: 28px;
+      line-height: 110%;
+      text-align: center;
+      letter-spacing: -0.02em;
+      color: #ddd5cc;
+
+      @media (max-width: 992px) {
+        width: 264px;
+        height: 100px;
+
+        font-size: 14px;
+        line-height: 120%;
+      }
+    }
+  }
+
   &__item {
     &:not(:first-child) {
       margin: 24px 0 0;

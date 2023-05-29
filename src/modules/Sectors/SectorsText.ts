@@ -18,14 +18,14 @@ export const SectorsText = {
     {
       title: 'Renewable Energy',
       description:
-        'alternative energy sources, carbon neutral developments, waste to energy production',
+        'Alternative energy sources, carbon neutral developments, waste to energy production.',
       img: sectorImg1,
       img2x: sectorImg1_2x,
       imgWebp: sectorImg1Webp,
     },
     {
       title: 'Sustainability',
-      description: 'green construction, agri-tech, urban renewal',
+      description: 'Green construction, agri-tech, urban renewal.',
       img: sectorImg2,
       img2x: sectorImg2_2x,
       imgWebp: sectorImg2Webp,
@@ -33,17 +33,17 @@ export const SectorsText = {
     {
       title: 'Telecommunications',
       description:
-        'digital and wireless communication, long-distance carriers, automation',
-      img: sectorImg3,
-      img2x: sectorImg3_2x,
-      imgWebp: sectorImg3Webp,
-    },
-    {
-      title: 'Healthcare & Medical Technology',
-      description: 'biotechnology, pharmaceuticals, diagnostics',
+        'Digital and wireless communication, long-distance carriers, automation.',
       img: sectorImg4,
       img2x: sectorImg4_2x,
       imgWebp: sectorImg4Webp,
+    },
+    {
+      title: 'Healthcare & Medical Technology',
+      description: 'Biotechnology, pharmaceuticals, diagnostics.',
+      img: sectorImg3,
+      img2x: sectorImg3_2x,
+      imgWebp: sectorImg3Webp,
     },
   ],
 };

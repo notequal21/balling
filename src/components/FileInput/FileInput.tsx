@@ -2,7 +2,23 @@ import { useState, useRef } from 'react';
 import pin from '../../assets/icons/pin';
 import style from './FileInput.module.scss';
 
-const FileInput = () => {
+interface IFileInput {
+  name?: string;
+  label?: any;
+  register?: any;
+  required?: any;
+  pattern?: any;
+  className?: any;
+}
+
+const FileInput = ({
+  name,
+  label,
+  register,
+  required,
+  pattern,
+  className,
+}: IFileInput) => {
   const fileInputRef = useRef(null);
   const [fileName, setFileName] = useState('');
 
@@ -13,7 +29,14 @@ const FileInput = () => {
 
   return (
     <label className={style.fileInput}>
-      <input ref={fileInputRef} onChange={handleFileSelected} type='file' />
+      <input
+        name={name}
+        // {...register(label, { required, pattern: pattern })}
+        ref={fileInputRef}
+        onChange={handleFileSelected}
+        type='file'
+        multiple
+      />
       <div className={style.fake}>
         {fileName === '' ? 'ONLY PDF FILE' : fileName}
         {pin}
